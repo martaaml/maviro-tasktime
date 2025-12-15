@@ -1,0 +1,195 @@
+
+html, body {
+    margin: 0; 
+    padding: 0;
+    width: 100%;
+    height: 100vh; 
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.fichaje-container {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at 30% 50%, #e3f2fd, #90caf9, #64b5f6);
+  overflow: hidden;
+} 
+
+/* Tarjeta principal */
+.fichaje-card {
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 2.5rem 3rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 550px;
+  width: 100%;
+  color: #003366;
+  position: relative;
+}
+
+/* Título */
+.titulo {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.8rem;
+}
+
+/* Contador animado */
+.contador {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  font-weight:1000;
+  color: #002b5b;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.contador-num {
+  position: relative;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 1rem 1.2rem;
+  border-radius: 15px;
+  box-shadow: inset 0 -2px 6px rgba(255, 255, 255, 0.2),
+    inset 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.dos-puntos {
+  font-size: 2.5rem;
+  margin: 0 8px;
+}
+
+/* Animación flip */
+.flip-enter-active,
+.flip-leave-active {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.flip-enter-from {
+  transform: rotateX(90deg);
+  opacity: 0;
+}
+
+.flip-leave-to {
+  transform: rotateX(-90deg);
+  opacity: 0;
+}
+
+/* Botón */
+.btn-fichar {
+  background: linear-gradient(135deg, #1e88e5, #42a5f5);
+  color: white;
+  border: none;
+  padding: 0.9rem 2.5rem;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(30, 136, 229, 0.4);
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.btn-fichar:hover {
+  transform: scale(1.05);
+}
+
+.btn-fichar.activo {
+  background: linear-gradient(135deg, #ef5350, #e53935);
+}
+
+/* Mensaje */
+.mensaje {
+  color: #256029;
+  font-weight: 600;
+  background: rgba(200, 230, 201, 0.4);
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 1rem;
+}
+
+/* Mapa */
+.mapa {
+  height: 280px;
+  width: 100%;
+  border-radius: 15px;
+  margin-top: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Dirección */
+.direccion {
+  margin-top: 0.8rem;
+  font-size: 0.95rem;
+  color: #004480;
+  font-weight: 500;
+}
+
+/* Burbujas decorativas */
+.fichaje-container::before,
+.fichaje-container::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  filter: blur(90px);
+  animation: flotar 10s infinite alternate ease-in-out;
+}
+
+.fichaje-container::before {
+  width: 320px;
+  height: 320px;
+  top: 15%;
+  left: 5%;
+}
+
+.fichaje-container::after {
+  width: 260px;
+  height: 260px;
+  bottom: 10%;
+  right: 10%;
+}
+
+@keyframes flotar {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(20px);
+  }
+}
+
+@media (max-width: 900px) {
+  .fichaje-container {
+    padding: 2rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .fichaje-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 1.5rem;
+  }
+
+  .titulo {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .contador {
+    font-size: 2.5rem;
+  }
+
+  .btn-fichar {
+    margin-bottom: 0.5rem;
+  }
+}

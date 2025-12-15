@@ -1,0 +1,253 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: none;
+}
+
+/* Contenedor principal */
+.login-page {
+  font-family: "Poppins", sans-serif;
+  width: 100vw;
+  height: 100dvh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #c7e9f5, #a4c8f0, #9bc8e3);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Capa oscura */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 51, 102, 0.25);
+  z-index: 0;
+}
+
+/* Formulario orientado a la izquierda */
+.login-container {
+  position: relative;
+  z-index: 1;
+  width: 380px;
+  padding: 2.5rem 3rem;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  color: #333;
+  animation: slideInLeft 1s ease;
+  margin-left: 6vw;
+  align-self: center;
+}
+
+.login-form h2 {
+  text-align: center;
+  font-weight: 600;
+  color: #12344d;
+  margin-bottom: 1.8rem;
+  font-size: 1.8rem;
+}
+
+/* Inputs */
+.input-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px 14px;
+  border-radius: 50px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  color: #222;
+}
+
+
+.info-login {
+  margin-top: 0.4rem;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.info-login p {
+  margin: 0.2rem 0;
+  font-size: 0.85rem;
+  color: rgba(30, 30, 30, 0.75);
+}
+
+
+/* Texto más destacado */
+.info-login .unique-access {
+  font-weight: 600;
+  color: #2d4f6c;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+
+.input-group label {
+  position: absolute;
+  left: 20px;
+  top: 13px;
+  color: #444;
+  font-size: 0.95rem;
+  pointer-events: none;
+  transition: 0.25s ease;
+}
+
+
+/* Placeholder flotante */
+.input-group input:focus,
+.input-group input:not(:placeholder-shown) {
+  border-color: #5b8def;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+  top: -9px;
+  left: 18px;
+  font-size: 0.8rem;
+  color: #3464c9;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 0 8px;
+  border-radius: 8px;
+}
+
+/* Botón */
+button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #4a90e2, #357abd);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #5aa3f5, #468ad9);
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  background: rgba(255, 255, 255, 0.4);
+  cursor: not-allowed;
+}
+
+/* Error */
+.error {
+  margin-top: 1rem;
+  color: #d94444;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* 💬 Burbujas */
+.chat-bubbles {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 45%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  overflow: visible;
+}
+
+/* 💭 Estilo general burbujas */
+.bubble {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.85);
+  color: #333;
+  padding: 0.9rem 1.3rem;
+  border-radius: 20px 20px 6px 20px;
+  font-weight: 500;
+  font-size: 1rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  max-width: 260px;
+  animation: talkLoop 12s infinite ease-in-out;
+}
+
+/* Animación general */
+@keyframes talkLoop {
+  0%, 10% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  15%, 100% {
+    opacity: 0;
+    transform: translateY(25px) scale(0.95);
+  }
+}
+
+/* Posiciones distintas */
+.bubble-1 {
+  top: 12%;
+  right: 10%;
+  animation-delay: 0s;
+}
+.bubble-2 {
+  top: 35%;
+  right: 18%;
+  animation-delay: 3s;
+}
+.bubble-3 {
+  top: 60%;
+  right: 8%;
+  animation-delay: 6s;
+}
+.bubble-4 {
+  top: 78%;
+  right: 15%;
+  animation-delay: 9s;
+}
+
+/* Entrada formulario */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .login-page {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  .login-container { 
+    width: 90%;
+    max-width: 400px;
+    margin: 0;
+  }
+
+  .login-container {
+    width: 90%;
+    max-width: 400px;
+    margin: 0;
+  }
+  
+}

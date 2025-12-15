@@ -1,0 +1,152 @@
+
+.change-password {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: auto; 
+    height: auto;
+    width: 100%;
+    padding: 80px 20px;
+    
+    background: linear-gradient(135deg, #f0f4f7 0%, #e0e6eb 100%);
+}
+
+.change-password h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1e3a5f;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.change-password p:first-of-type {
+    color: #6c757d;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    max-width: 450px; 
+    width: 100%; 
+    padding: 2.5rem;
+    
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(18px); 
+    border-radius: 25px; 
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    
+    color: #333;
+    animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+label {
+    display: flex;
+    width: 100%;
+}
+
+input {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background: rgba(255, 255, 255, 0.7);
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+    outline: none;
+    background: white;
+}
+
+
+
+button[type="submit"] {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.5, 1);
+    font-size: 1.1rem;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 700;
+    margin-top: 0.5rem;
+
+
+    background: #007bff; 
+    border: 2px solid #007bff;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+    background: #0056b3;
+    border-color: #0056b3;
+}
+
+
+.success {
+    color: #28a745;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+    background: rgba(40, 167, 69, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #28a745;
+}
+
+.error {
+    color: #dc3545;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+    background: rgba(220, 53, 69, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #dc3545;
+}
+
+@media (max-width: 600px) {
+    .change-password {
+
+        align-items: stretch; 
+        padding: 0;
+    }
+
+    form {
+        max-width: none;
+        width: auto;
+        border-radius: 0; 
+        padding: 2rem 1.5rem;
+        box-shadow: none;
+        border: none;
+        background: white; 
+        backdrop-filter: none;
+    }
+    
+    .change-password h2 {
+        font-size: 2rem;
+        padding-top: 1.5rem;
+    }
+    
+    input {
+        padding: 0.9rem;
+    }
+}

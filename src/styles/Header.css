@@ -1,0 +1,87 @@
+.main-header,.header-empleado, .header-admin {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background-color: #f0f4f8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.8rem;
+  border-bottom: 1px solid #d0d7de;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.empresa {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #004680;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-right: 0.5rem; /* margen para que no se pegue al borde */
+}
+
+.bienvenida {
+  font-weight: 500;
+  color: #333;
+}
+
+.menu-iconos {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+/* Botones */
+.menu-iconos button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  border-radius: 50%;
+  padding: 6px;
+}
+
+.menu-iconos button:hover {
+  transform: scale(1.15);
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+/* Ajuste global del contenido para no quedar debajo del header */
+:global(html),
+:global(body),
+:global(#app) {
+  margin: 24px auto;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+:global(main),
+:global(.app),
+:global(.panel-admin),
+:global(.panel-empleado),
+:global(.router-view) {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: calc(100vh - 70px);
+  box-sizing: border-box;
+  background-color: #f9fafb;
+  padding-top: 70px;
+}
+

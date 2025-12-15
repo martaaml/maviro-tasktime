@@ -1,0 +1,294 @@
+.panel-base {
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: #f5f5f5;
+}
+
+.panel-base h2 {
+  margin: 0;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+.panel-base p {
+  margin: 0;
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+
+.panel-base ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.panel-base li {
+  padding: 1rem;
+  margin: 0;
+}
+
+.panel-base li button {
+  background-color: #7c9ce6;
+  border: none;
+  border-radius: 1.5rem;
+  border-color:cadetblue;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.panel-base li button:hover {
+  background-color: #5d6af5;
+}
+
+/* --- Estilos para la Cuadrícula y los Widgets (Panel.css) --- */
+
+/* Contenedor de la cuadrícula */
+.widgets-grid {
+    display: grid;
+    /* Divide el espacio en 3 columnas iguales */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px; /* Espacio entre las tarjetas */
+    margin-top: 30px;
+}
+
+/* Estilo Base de las Tarjetas (Widget) */
+.widget-card {
+    background-color: #fcfcfc; /* Fondo blanco casi puro para destacar la información */
+    border-radius: 12px;
+    padding: 25px;
+    
+    /* Sombra suave y sutil */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
+    border: 1px solid #eee; /* Borde muy claro */
+    transition: transform 0.2s;
+}
+
+/* Efecto hover */
+.widget-card:hover {
+    transform: translateY(-3px); /* Ligeramente elevado al pasar el ratón */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado del Widget */
+.widget-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.widget-header h3 {
+    font-size: 1.3em;
+    color: #333;
+    margin: 0;
+}
+
+/* Contador de elementos (ej: 4 tareas, 2 mensajes) */
+.contador {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #4CAF50; /* Color primario para números (verde de éxito) */
+}
+
+/* Contador para elementos nuevos/críticos (mensajes, alertas) */
+.contador.new-count {
+    color: #FF5722; /* Naranja/Rojo para mensajes nuevos */
+    background-color: #ffe0b2;
+    padding: 2px 10px;
+    border-radius: 50px;
+}
+
+/* Introducción (el texto que dice "Tienes X tareas pendientes...") */
+.widget-intro {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 0.95em;
+}
+
+/* Vista Previa */
+.widget-preview {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    margin-bottom: 15px;
+}
+
+.widget-preview h4 {
+    margin: 0 0 5px 0;
+    font-size: 0.9em;
+    color: #888;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.preview-text {
+    font-size: 1em;
+    font-weight: 600;
+    color: #444;
+}
+
+/* Botón de acción (Ver más) */
+.btn-ver {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #42b983; /* Color de acento de Vue/Éxito */
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-ver:hover {
+    background-color: #38a174;
+} 
+
+.widgets-grid {
+  display: flex;
+  gap: 2.5rem;
+  padding: 3rem 2rem 4rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.widgets-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.titulo-panel {
+  margin-top: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.widgets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.widget-card {
+  background: white;
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow:
+    0 0 10px rgba(255, 182, 193, 0.25),
+    0 0 20px rgba(255, 223, 186, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.widget-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 0 20px rgba(255, 182, 193, 0.45),
+    0 0 35px rgba(255, 223, 186, 0.45);
+}
+
+.widget-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.widget-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.contador {
+  background: #2563eb;
+  color: white;
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+  font-weight: bold;
+}
+
+.widget-intro {
+  margin: 0.8rem 0;
+  color: #475569;
+}
+
+.widget-preview {
+  background: #f8fafc;
+  padding: 0.8rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.prioridad {
+  font-weight: 600;
+  margin-left: 0.4rem;
+  color: #e11d48;
+}
+
+.btn-ver {
+  width: 100%;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 10px;
+  background: #1d4ed8;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s;
+}
+
+.btn-ver:hover {
+  background: #2563eb;
+}
+
+.button-panel {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 10px;
+  border: none;
+  background: #e5e7eb;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.button-panel:hover {
+  background: #dbeafe;
+}
+
+@media (max-width: 900px) {
+  /*Vista movil, menu hamburger */
+  .main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    border-bottom: 1px solid #d0d7de;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(10px);
+  }
+
+  .menu-iconos {
+    display: none;
+  }
+
+  .main-header.activo {
+    transform: translateY(-100%);
+  }
+
+  .main-header.activo .menu-iconos {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+}
